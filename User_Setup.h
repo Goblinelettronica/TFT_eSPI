@@ -42,8 +42,8 @@
 //#define RPI_DISPLAY_TYPE // 20MHz maximum SPI
 
 // Only define one driver, the other ones must be commented out
-#define ILI9341_DRIVER       // Generic driver for common displays
-//#define ILI9341_2_DRIVER     // Alternative ILI9341 driver, see https://github.com/Bodmer/TFT_eSPI/issues/1172
+//#define ILI9341_DRIVER       // Generic driver for common displays
+#define ILI9341_2_DRIVER     // Alternative ILI9341 driver, see https://github.com/Bodmer/TFT_eSPI/issues/1172
 //#define ST7735_DRIVER      // Define additional parameters below for this display
 //#define ILI9163_DRIVER     // Define additional parameters below for this display
 //#define S6D02A1_DRIVER
@@ -85,11 +85,11 @@
 // #define TFT_WIDTH  128
 // #define TFT_WIDTH  172 // ST7789 172 x 320
 // #define TFT_WIDTH  170 // ST7789 170 x 320
-// #define TFT_WIDTH  240 // ST7789 240 x 240 and 240 x 320
+ #define TFT_WIDTH  240 // ST7789 240 x 240 and 240 x 320
 // #define TFT_HEIGHT 160
 // #define TFT_HEIGHT 128
 // #define TFT_HEIGHT 240 // ST7789 240 x 240
-// #define TFT_HEIGHT 320 // ST7789 240 x 320
+ #define TFT_HEIGHT 320 // ST7789 240 x 320
 // #define TFT_HEIGHT 240 // GC9A01 240 x 240
 
 // For ST7735 ONLY, define the type of display, originally this was based on the
@@ -129,8 +129,8 @@
 // driven with a PWM signal or turned OFF/ON then this must be handled by the user
 // sketch. e.g. with digitalWrite(TFT_BL, LOW);
 
-// #define TFT_BL   32            // LED back-light control pin
-// #define TFT_BACKLIGHT_ON HIGH  // Level to turn ON back-light (HIGH or LOW)
+#define TFT_BL   21            // LED back-light control pin
+#define TFT_BACKLIGHT_ON HIGH  // Level to turn ON back-light (HIGH or LOW)
 
 
 
@@ -232,13 +232,13 @@
 //#define TFT_WR 22    // Write strobe for modified Raspberry Pi TFT only
 
 // For the M5Stack module use these #define lines
-//#define TFT_MISO 19
-//#define TFT_MOSI 23
-//#define TFT_SCLK 18
-//#define TFT_CS   14  // Chip select control pin
-//#define TFT_DC   27  // Data Command control pin
-//#define TFT_RST  33  // Reset pin (could connect to Arduino RESET pin)
-//#define TFT_BL   32  // LED back-light (required for M5Stack)
+#define TFT_MISO 12
+#define TFT_MOSI 13
+#define TFT_SCLK 14
+#define TFT_CS   15  // Chip select control pin
+#define TFT_DC   2  // Data Command control pin
+#define TFT_RST  -1  // Reset pin (could connect to Arduino RESET pin)
+#define TFT_BL   21  // LED back-light (required for M5Stack)
 
 // ######       EDIT THE PINs BELOW TO SUIT YOUR ESP32 PARALLEL TFT SETUP        ######
 
